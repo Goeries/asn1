@@ -1,0 +1,12 @@
+# Test-suite relaxations on top of the root config.
+# - use-anonymous-namespace fires on doctest's TEST_CASE expansion
+# - c-arrays / pi-literals / enum sizes are deliberate in test vectors
+# - positional aggregate init mirrors SEQUENCE wire order in test vectors
+---
+InheritParentConfig: true
+Checks: >
+  -misc-use-anonymous-namespace,
+  -modernize-avoid-c-arrays,
+  -modernize-use-designated-initializers,
+  -modernize-use-std-numbers,
+  -performance-enum-size
