@@ -111,11 +111,48 @@ swapped without any public API change.
 - DEFAULT component elision and BIT STRING named-bit trimming are schema
   knowledge the codec does not have; both are out of scope for now.
 
+## Using the library
+
+Header-only; every integration style reduces to getting `include/` onto the
+include path and compiling with C++23 (GCC ≥ 14.2, Clang ≥ 19, or
+MSVC 19.40+; Clang 18 with libstdc++ lacks `std::expected` because it
+reports `__cpp_concepts` as 201907).
+
+**Include path / vendoring** — copy the `include/asn1/` directory into your
+tree (or point `-I` at this repo's `include/`) and `#include
+<asn1/asn1.hpp>`. Nothing to build, no dependencies.
+
+**Git submodule**
+
+```sh
+git submodule add https://github.com/Goeries/asn1.git external/asn1
+```
+
+```cmake
+add_subdirectory(external/asn1)
+target_link_libraries(app PRIVATE asn1::asn1)
+```
+
+Tests and fuzzers are gated behind `PROJECT_IS_TOP_LEVEL`, so a parent
+project pulls in only the `asn1::asn1` INTERFACE target — no doctest
+download, no extra build targets.
+
+**CMake FetchContent**
+
+```cmake
+include(FetchContent)
+FetchContent_Declare(asn1
+  GIT_REPOSITORY https://github.com/Goeries/asn1.git
+  GIT_TAG v0.1.0)
+FetchContent_MakeAvailable(asn1)
+target_link_libraries(app PRIVATE asn1::asn1)
+```
+
+`install()` rules and `find_package()` config files are not provided yet.
+
 ## Building & testing
 
-Header-only: add `include/` to your include path, compile with `-std=c++23`
-(GCC ≥ 14.2, Clang ≥ 19, or MSVC 19.40+; Clang 18 with libstdc++ lacks
-`std::expected` because it reports `__cpp_concepts` as 201907).
+To work on the library itself:
 
 ```sh
 cmake -S . -B build -G Ninja -DCMAKE_CXX_COMPILER=g++-14
