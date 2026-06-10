@@ -143,7 +143,7 @@ download, no extra build targets.
 include(FetchContent)
 FetchContent_Declare(asn1
   GIT_REPOSITORY https://github.com/Goeries/asn1.git
-  GIT_TAG v0.1.0)
+  GIT_TAG v0.1.0-alpha)
 FetchContent_MakeAvailable(asn1)
 target_link_libraries(app PRIVATE asn1::asn1)
 ```

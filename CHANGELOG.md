@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - 2026-06-10
+## [0.1.0-alpha] - 2026-06-10
 
-Initial release.
+Initial alpha release.
 
 ### Added
 
@@ -35,5 +35,5 @@ Initial release.
   checks.
 - clang-format and clang-tidy configurations; the codebase is tidy-clean.
 
-[Unreleased]: https://github.com/goeries/asn1/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/goeries/asn1/releases/tag/v0.1.0
+[Unreleased]: https://github.com/goeries/asn1/compare/v0.1.0-alpha...HEAD
+[0.1.0-alpha]: https://github.com/goeries/asn1/releases/tag/v0.1.0-alpha
