@@ -1,6 +1,8 @@
 # asn1 — a modern C++23 ASN.1 codec
 
 [![CI](https://github.com/Goeries/asn1/actions/workflows/ci.yml/badge.svg)](https://github.com/Goeries/asn1/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![C++23](https://img.shields.io/badge/C%2B%2B-23-00599C.svg)](https://en.cppreference.com/w/cpp/23)
 
 Header-only ASN.1 codec parameterized on X.690 encoding rules. BER (Basic
 Encoding Rules) is fully supported for decode; the encoder emits
