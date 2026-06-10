@@ -1,5 +1,7 @@
 # asn1 — a modern C++23 ASN.1 codec
 
+[![CI](https://github.com/Goeries/asn1/actions/workflows/ci.yml/badge.svg)](https://github.com/Goeries/asn1/actions/workflows/ci.yml)
+
 Header-only ASN.1 codec parameterized on X.690 encoding rules. BER (Basic
 Encoding Rules) is fully supported for decode; the encoder emits
 definite-length, canonical-leaning output that is valid BER and (for types
@@ -163,3 +165,7 @@ The suite (doctest, fetched via CMake) covers all X.690 normative examples,
 RFC/vendor known-answer vectors, error-path corner cases and deterministic
 round-trip property tests. A libFuzzer harness lives in `fuzz/`
 (`-DASN1_BUILD_FUZZERS=ON` with clang).
+
+## License
+
+[MIT](LICENSE)
