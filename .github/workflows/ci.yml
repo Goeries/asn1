@@ -9,7 +9,7 @@ jobs:
   format:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install clang-format
         run: sudo apt-get update && sudo apt-get install -y clang-format-18
       - name: Check formatting
@@ -20,7 +20,7 @@ jobs:
   gcc:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install toolchain
         run: sudo apt-get update && sudo apt-get install -y g++-14 ninja-build
       - name: Configure
@@ -33,7 +33,7 @@ jobs:
   clang:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install toolchain
         run: sudo apt-get update && sudo apt-get install -y clang-19 libclang-rt-19-dev ninja-build
       - name: Configure
@@ -48,7 +48,7 @@ jobs:
   tidy:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install toolchain
         run: sudo apt-get update && sudo apt-get install -y clang-tidy-20 g++-14 ninja-build
       - name: Configure
@@ -61,7 +61,7 @@ jobs:
   msvc:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Configure
         run: cmake -S . -B build
       - name: Build
@@ -75,7 +75,7 @@ jobs:
       run:
         shell: msys2 {0}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: msys2/setup-msys2@v2
         with:
           msystem: UCRT64

@@ -1,4 +1,4 @@
-# Requires clang-tidy >= 18.
+# Requires clang-tidy >= 20.
 ---
 Checks: >
   bugprone-*,
